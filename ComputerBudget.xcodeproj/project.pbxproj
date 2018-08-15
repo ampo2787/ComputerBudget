@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AA542DD21240B2A0022FA56 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DA21240B290022FA56 /* XPathQuery.m */; };
+		7AA542DE21240B2A0022FA56 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DB21240B290022FA56 /* TFHppleElement.m */; };
+		7AA542DF21240B2A0022FA56 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DC21240B2A0022FA56 /* TFHpple.m */; };
+		7AA542E2212415760022FA56 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA542E1212415760022FA56 /* libxml2.2.tbd */; };
 		7AF827172113B15200AF8D29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827162113B15200AF8D29 /* AppDelegate.m */; };
 		7AF8271A2113B15200AF8D29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827192113B15200AF8D29 /* ViewController.m */; };
 		7AF8271D2113B15200AF8D29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF8271B2113B15200AF8D29 /* Main.storyboard */; };
@@ -14,9 +18,18 @@
 		7AF827222113B15400AF8D29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF827212113B15400AF8D29 /* Assets.xcassets */; };
 		7AF827252113B15400AF8D29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF827232113B15400AF8D29 /* LaunchScreen.storyboard */; };
 		7AF827282113B15400AF8D29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827272113B15400AF8D29 /* main.m */; };
+		7AF827302113BD5100AF8D29 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF8272F2113BD5100AF8D29 /* NextViewController.m */; };
+		7AF827332113C27900AF8D29 /* ChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827322113C27900AF8D29 /* ChoiceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7AA542D721240B290022FA56 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		7AA542D821240B290022FA56 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		7AA542D921240B290022FA56 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		7AA542DA21240B290022FA56 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		7AA542DB21240B290022FA56 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		7AA542DC21240B2A0022FA56 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		7AA542E1212415760022FA56 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		7AF827122113B15200AF8D29 /* ComputerBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComputerBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF827152113B15200AF8D29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7AF827162113B15200AF8D29 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -28,6 +41,10 @@
 		7AF827242113B15400AF8D29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AF827262113B15400AF8D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AF827272113B15400AF8D29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7AF8272E2113BD5100AF8D29 /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
+		7AF8272F2113BD5100AF8D29 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
+		7AF827312113C27900AF8D29 /* ChoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoiceViewController.h; sourceTree = "<group>"; };
+		7AF827322113C27900AF8D29 /* ChoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoiceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +52,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA542E2212415760022FA56 /* libxml2.2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AA542D621240AFA0022FA56 /* hpple */ = {
+			isa = PBXGroup;
+			children = (
+				7AA542D721240B290022FA56 /* TFHpple.h */,
+				7AA542DC21240B2A0022FA56 /* TFHpple.m */,
+				7AA542D821240B290022FA56 /* TFHppleElement.h */,
+				7AA542DB21240B290022FA56 /* TFHppleElement.m */,
+				7AA542D921240B290022FA56 /* XPathQuery.h */,
+				7AA542DA21240B290022FA56 /* XPathQuery.m */,
+			);
+			path = hpple;
+			sourceTree = "<group>";
+		};
+		7AA542E0212415760022FA56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AA542E1212415760022FA56 /* libxml2.2.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7AF827092113B15200AF8D29 = {
 			isa = PBXGroup;
 			children = (
 				7AF827142113B15200AF8D29 /* ComputerBudget */,
 				7AF827132113B15200AF8D29 /* Products */,
+				7AA542E0212415760022FA56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +100,7 @@
 		7AF827142113B15200AF8D29 /* ComputerBudget */ = {
 			isa = PBXGroup;
 			children = (
+				7AA542D621240AFA0022FA56 /* hpple */,
 				7AF827152113B15200AF8D29 /* AppDelegate.h */,
 				7AF827162113B15200AF8D29 /* AppDelegate.m */,
 				7AF827182113B15200AF8D29 /* ViewController.h */,
@@ -70,6 +111,10 @@
 				7AF827262113B15400AF8D29 /* Info.plist */,
 				7AF827272113B15400AF8D29 /* main.m */,
 				7AF8271E2113B15200AF8D29 /* ComputerBudget.xcdatamodeld */,
+				7AF8272E2113BD5100AF8D29 /* NextViewController.h */,
+				7AF8272F2113BD5100AF8D29 /* NextViewController.m */,
+				7AF827312113C27900AF8D29 /* ChoiceViewController.h */,
+				7AF827322113C27900AF8D29 /* ChoiceViewController.m */,
 			);
 			path = ComputerBudget;
 			sourceTree = "<group>";
@@ -144,6 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA542DE21240B2A0022FA56 /* TFHppleElement.m in Sources */,
+				7AF827302113BD5100AF8D29 /* NextViewController.m in Sources */,
+				7AA542DD21240B2A0022FA56 /* XPathQuery.m in Sources */,
+				7AF827332113C27900AF8D29 /* ChoiceViewController.m in Sources */,
+				7AA542DF21240B2A0022FA56 /* TFHpple.m in Sources */,
 				7AF8271A2113B15200AF8D29 /* ViewController.m in Sources */,
 				7AF827202113B15200AF8D29 /* ComputerBudget.xcdatamodeld in Sources */,
 				7AF827282113B15400AF8D29 /* main.m in Sources */,
@@ -289,6 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z73D4U4HW8;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = ComputerBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -296,7 +347,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JihoonPark.ComputerBudget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -306,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z73D4U4HW8;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = ComputerBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -313,7 +365,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JihoonPark.ComputerBudget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

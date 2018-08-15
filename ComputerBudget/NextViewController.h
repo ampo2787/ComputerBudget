@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NextViewController.h
 //  ComputerBudget
 //
 //  Created by JihoonPark on 2018. 8. 3..
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-@property (weak, nonatomic) NSString *kindString;
-
+@interface NextViewController : UIViewController
 
 @end
-
