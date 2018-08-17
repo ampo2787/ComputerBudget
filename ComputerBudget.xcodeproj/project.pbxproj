@@ -19,7 +19,6 @@
 		7AF827252113B15400AF8D29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF827232113B15400AF8D29 /* LaunchScreen.storyboard */; };
 		7AF827282113B15400AF8D29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827272113B15400AF8D29 /* main.m */; };
 		7AF827302113BD5100AF8D29 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF8272F2113BD5100AF8D29 /* NextViewController.m */; };
-		7AF827332113C27900AF8D29 /* ChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827322113C27900AF8D29 /* ChoiceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +42,6 @@
 		7AF827272113B15400AF8D29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7AF8272E2113BD5100AF8D29 /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
 		7AF8272F2113BD5100AF8D29 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
-		7AF827312113C27900AF8D29 /* ChoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoiceViewController.h; sourceTree = "<group>"; };
-		7AF827322113C27900AF8D29 /* ChoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoiceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +110,6 @@
 				7AF8271E2113B15200AF8D29 /* ComputerBudget.xcdatamodeld */,
 				7AF8272E2113BD5100AF8D29 /* NextViewController.h */,
 				7AF8272F2113BD5100AF8D29 /* NextViewController.m */,
-				7AF827312113C27900AF8D29 /* ChoiceViewController.h */,
-				7AF827322113C27900AF8D29 /* ChoiceViewController.m */,
 			);
 			path = ComputerBudget;
 			sourceTree = "<group>";
@@ -192,7 +187,6 @@
 				7AA542DE21240B2A0022FA56 /* TFHppleElement.m in Sources */,
 				7AF827302113BD5100AF8D29 /* NextViewController.m in Sources */,
 				7AA542DD21240B2A0022FA56 /* XPathQuery.m in Sources */,
-				7AF827332113C27900AF8D29 /* ChoiceViewController.m in Sources */,
 				7AA542DF21240B2A0022FA56 /* TFHpple.m in Sources */,
 				7AF8271A2113B15200AF8D29 /* ViewController.m in Sources */,
 				7AF827202113B15200AF8D29 /* ComputerBudget.xcdatamodeld in Sources */,

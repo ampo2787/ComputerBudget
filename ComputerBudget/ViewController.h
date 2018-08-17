@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate>{
+    UIPickerView *budgetPickerView;
+    UIPickerView *purposePickerView;
 
-@property (weak, nonatomic) NSString *kindString;
+    NSMutableArray *budgetArray;
+    NSMutableArray *purposeArray;
+}
 
+@property (nonatomic, weak) NSString *tfPurposeText;
+@property (nonatomic, weak) NSString *tfBudgetText;
 
 @end
 
