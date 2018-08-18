@@ -19,9 +19,32 @@
 
 @implementation ViewController
 
-
 - (IBAction)ChoiceFinish:(id)sender {
     NextViewController *nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"nextView"];
+    self.listArray = [[NSMutableArray alloc]initWithCapacity:2];
+    [self.listArray removeAllObjects];
+    
+    if([self.tfBudget.text  isEqualToString: @"50만원 이하"]){
+        [self.listArray addObject:@"50"];
+    }else if([self.tfBudget.text  isEqualToString: @"100만원 이하"]){
+        [self.listArray addObject:@"100"];
+    }else if([self.tfBudget.text isEqualToString:@"150만원 이하"]){
+        [self.listArray addObject:@"150"];
+    }else{
+        [self.listArray addObject:@"200"];
+    }
+    
+    if([self.tfPurpose.text  isEqualToString: @"간단한 사무용, 동영상 감상"]){
+        [self.listArray addObject:@"간단"];
+    }else if([self.tfPurpose.text  isEqualToString: @"가벼운 게임, 적당한 활용"]){
+        [self.listArray addObject:@"적당"];
+    }else if([self.tfPurpose.text isEqualToString:@"고오급 게임, 그래픽 작업"]){
+        [self.listArray addObject:@"고급"];
+    }else{
+        [self.listArray addObject:@"코딩"];
+    }
+    
+    nextView.listArray = self.listArray;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 
@@ -32,9 +55,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     UIToolbar *toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.layer.borderWidth, 40)];
-    UIBarButtonItem *btnDone = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(pickerViewDone:)];
+    [toolbar setCenter:self.view.center];
+    UIBarButtonItem *btnDone = [[UIBarButtonItem alloc]initWithTitle:@"선택" style:UIBarButtonItemStyleDone target:self action:@selector(pickerViewDone:)];
+    UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc]initWithTitle:@"취소" style:UIBarButtonItemStyleDone target:self action:@selector(pickerViewCancel:)];
     
-    [toolbar setItems:[NSArray arrayWithObjects:btnDone, nil] animated:YES];
+    [toolbar setItems:[NSArray arrayWithObjects:btnDone,btnCancel, nil] animated:YES];
     //pickerView의 toolbar와 done버튼 추가.
     
     budgetArray = [NSMutableArray arrayWithCapacity:4];
@@ -89,7 +114,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - budgetPickerView Delegate & DataSource
+#pragma mark - PickerView Delegate & DataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
@@ -115,8 +140,9 @@
     
 }
 
+#pragma mark - toolbar Action
+
 -(void)pickerViewDone:(id)sender{
-    NSLog(@"눌림");
     [self.tfBudget setText:self.tfBudgetText];
     [self.tfPurpose setText:self.tfPurposeText];
     
@@ -124,7 +150,14 @@
     [self.tfPurpose resignFirstResponder];
     
     [purposePickerView removeFromSuperview];
+    [budgetPickerView removeFromSuperview];
+}
 
+-(void)pickerViewCancel:(id)sender{
+    [self.tfBudget resignFirstResponder];
+    [self.tfPurpose resignFirstResponder];
+    [purposePickerView removeFromSuperview];
+    [budgetPickerView removeFromSuperview];
 }
 
 

@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     NSString *htmlWillInsert = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://prod.danawa.com/info/?pcode=5530356&keyword=i5-8400&cate=112747"] encoding:NSUTF8StringEncoding error:nil];
     NSData *htmlData = [htmlWillInsert dataUsingEncoding:NSUnicodeStringEncoding];
     TFHpple *xpathParser = [[TFHpple alloc] initWithHTMLData:htmlData];

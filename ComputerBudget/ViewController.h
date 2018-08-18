@@ -19,5 +19,7 @@
 @property (nonatomic, weak) NSString *tfPurposeText;
 @property (nonatomic, weak) NSString *tfBudgetText;
 
+@property NSMutableArray * listArray;
+
 @end
 

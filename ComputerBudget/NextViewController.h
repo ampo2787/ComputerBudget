@@ -10,4 +10,6 @@
 
 @interface NextViewController : UIViewController
 
+@property NSMutableArray * listArray;
+
 @end
