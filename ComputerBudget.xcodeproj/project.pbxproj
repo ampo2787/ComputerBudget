@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023A6E1AE3ED2551C58D6C67 /* libPods-ComputerBudget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E123C2F319120C9CAE8C127E /* libPods-ComputerBudget.a */; };
+		7A677CB3219059770082BFF6 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A677CB2219059770082BFF6 /* TableViewController.m */; };
+		7A677CB821905A1A0082BFF6 /* parseEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A677CB721905A1A0082BFF6 /* parseEngine.m */; };
+		7A76E84B21926512005108F3 /* priceCalculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A76E84A21926512005108F3 /* priceCalculate.m */; };
+		7A76E8512192835F005108F3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A76E8502192835F005108F3 /* TableViewCell.m */; };
+		7A88751821A299C800C59C57 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A88751721A299C800C59C57 /* LaunchViewController.m */; };
 		7AA542DD21240B2A0022FA56 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DA21240B290022FA56 /* XPathQuery.m */; };
 		7AA542DE21240B2A0022FA56 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DB21240B290022FA56 /* TFHppleElement.m */; };
 		7AA542DF21240B2A0022FA56 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DC21240B2A0022FA56 /* TFHpple.m */; };
@@ -18,10 +24,20 @@
 		7AF827222113B15400AF8D29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF827212113B15400AF8D29 /* Assets.xcassets */; };
 		7AF827252113B15400AF8D29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF827232113B15400AF8D29 /* LaunchScreen.storyboard */; };
 		7AF827282113B15400AF8D29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827272113B15400AF8D29 /* main.m */; };
-		7AF827302113BD5100AF8D29 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF8272F2113BD5100AF8D29 /* NextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A677CB1219059770082BFF6 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		7A677CB2219059770082BFF6 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		7A677CB621905A1A0082BFF6 /* parseEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = parseEngine.h; sourceTree = "<group>"; };
+		7A677CB721905A1A0082BFF6 /* parseEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = parseEngine.m; sourceTree = "<group>"; };
+		7A677CBC219065E50082BFF6 /* product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = product.h; sourceTree = "<group>"; };
+		7A76E84921926511005108F3 /* priceCalculate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = priceCalculate.h; sourceTree = "<group>"; };
+		7A76E84A21926512005108F3 /* priceCalculate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = priceCalculate.m; sourceTree = "<group>"; };
+		7A76E84F2192835F005108F3 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		7A76E8502192835F005108F3 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		7A88751621A299C800C59C57 /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		7A88751721A299C800C59C57 /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		7AA542D721240B290022FA56 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		7AA542D821240B290022FA56 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
 		7AA542D921240B290022FA56 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
@@ -40,8 +56,9 @@
 		7AF827242113B15400AF8D29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AF827262113B15400AF8D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AF827272113B15400AF8D29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7AF8272E2113BD5100AF8D29 /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
-		7AF8272F2113BD5100AF8D29 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
+		8D5F071E82B8E01A19037CBB /* Pods-ComputerBudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputerBudget.release.xcconfig"; path = "Target Support Files/Pods-ComputerBudget/Pods-ComputerBudget.release.xcconfig"; sourceTree = "<group>"; };
+		E123C2F319120C9CAE8C127E /* libPods-ComputerBudget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComputerBudget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F103E57856D08CD479F0897C /* Pods-ComputerBudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputerBudget.debug.xcconfig"; path = "Target Support Files/Pods-ComputerBudget/Pods-ComputerBudget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +67,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AA542E2212415760022FA56 /* libxml2.2.tbd in Frameworks */,
+				023A6E1AE3ED2551C58D6C67 /* libPods-ComputerBudget.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A677CB42190598C0082BFF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AA542D621240AFA0022FA56 /* hpple */,
+				7A677CB621905A1A0082BFF6 /* parseEngine.h */,
+				7A677CB721905A1A0082BFF6 /* parseEngine.m */,
+				7A677CBC219065E50082BFF6 /* product.h */,
+				7A76E84921926511005108F3 /* priceCalculate.h */,
+				7A76E84A21926512005108F3 /* priceCalculate.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A677CB5219059A10082BFF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AF8271B2113B15200AF8D29 /* Main.storyboard */,
+				7A76E84F2192835F005108F3 /* TableViewCell.h */,
+				7A76E8502192835F005108F3 /* TableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7AA542D621240AFA0022FA56 /* hpple */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +114,22 @@
 			isa = PBXGroup;
 			children = (
 				7AA542E1212415760022FA56 /* libxml2.2.tbd */,
+				E123C2F319120C9CAE8C127E /* libPods-ComputerBudget.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7AE1AE292129742400B74692 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A677CB1219059770082BFF6 /* TableViewController.h */,
+				7A677CB2219059770082BFF6 /* TableViewController.m */,
+				7AF827182113B15200AF8D29 /* ViewController.h */,
+				7AF827192113B15200AF8D29 /* ViewController.m */,
+				7A88751621A299C800C59C57 /* LaunchViewController.h */,
+				7A88751721A299C800C59C57 /* LaunchViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7AF827092113B15200AF8D29 = {
@@ -83,6 +138,7 @@
 				7AF827142113B15200AF8D29 /* ComputerBudget */,
 				7AF827132113B15200AF8D29 /* Products */,
 				7AA542E0212415760022FA56 /* Frameworks */,
+				E30AB5B568F9D2E2A7142F96 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,21 +153,27 @@
 		7AF827142113B15200AF8D29 /* ComputerBudget */ = {
 			isa = PBXGroup;
 			children = (
-				7AA542D621240AFA0022FA56 /* hpple */,
+				7A677CB5219059A10082BFF6 /* View */,
+				7A677CB42190598C0082BFF6 /* Model */,
+				7AE1AE292129742400B74692 /* Controller */,
 				7AF827152113B15200AF8D29 /* AppDelegate.h */,
 				7AF827162113B15200AF8D29 /* AppDelegate.m */,
-				7AF827182113B15200AF8D29 /* ViewController.h */,
-				7AF827192113B15200AF8D29 /* ViewController.m */,
-				7AF8271B2113B15200AF8D29 /* Main.storyboard */,
 				7AF827212113B15400AF8D29 /* Assets.xcassets */,
 				7AF827232113B15400AF8D29 /* LaunchScreen.storyboard */,
 				7AF827262113B15400AF8D29 /* Info.plist */,
 				7AF827272113B15400AF8D29 /* main.m */,
 				7AF8271E2113B15200AF8D29 /* ComputerBudget.xcdatamodeld */,
-				7AF8272E2113BD5100AF8D29 /* NextViewController.h */,
-				7AF8272F2113BD5100AF8D29 /* NextViewController.m */,
 			);
 			path = ComputerBudget;
+			sourceTree = "<group>";
+		};
+		E30AB5B568F9D2E2A7142F96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F103E57856D08CD479F0897C /* Pods-ComputerBudget.debug.xcconfig */,
+				8D5F071E82B8E01A19037CBB /* Pods-ComputerBudget.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +183,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7AF8272B2113B15400AF8D29 /* Build configuration list for PBXNativeTarget "ComputerBudget" */;
 			buildPhases = (
+				AFCDB2B1AE8B2235E3CB87B0 /* [CP] Check Pods Manifest.lock */,
 				7AF8270E2113B15200AF8D29 /* Sources */,
 				7AF8270F2113B15200AF8D29 /* Frameworks */,
 				7AF827102113B15200AF8D29 /* Resources */,
@@ -179,19 +242,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AFCDB2B1AE8B2235E3CB87B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ComputerBudget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7AF8270E2113B15200AF8D29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7AA542DE21240B2A0022FA56 /* TFHppleElement.m in Sources */,
-				7AF827302113BD5100AF8D29 /* NextViewController.m in Sources */,
+				7A677CB821905A1A0082BFF6 /* parseEngine.m in Sources */,
 				7AA542DD21240B2A0022FA56 /* XPathQuery.m in Sources */,
 				7AA542DF21240B2A0022FA56 /* TFHpple.m in Sources */,
+				7A677CB3219059770082BFF6 /* TableViewController.m in Sources */,
 				7AF8271A2113B15200AF8D29 /* ViewController.m in Sources */,
+				7A76E84B21926512005108F3 /* priceCalculate.m in Sources */,
 				7AF827202113B15200AF8D29 /* ComputerBudget.xcdatamodeld in Sources */,
 				7AF827282113B15400AF8D29 /* main.m in Sources */,
+				7A76E8512192835F005108F3 /* TableViewCell.m in Sources */,
 				7AF827172113B15200AF8D29 /* AppDelegate.m in Sources */,
+				7A88751821A299C800C59C57 /* LaunchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,11 +421,15 @@
 		};
 		7AF8272C2113B15400AF8D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F103E57856D08CD479F0897C /* Pods-ComputerBudget.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z73D4U4HW8;
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = ComputerBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,11 +443,15 @@
 		};
 		7AF8272D2113B15400AF8D29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D5F071E82B8E01A19037CBB /* Pods-ComputerBudget.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z73D4U4HW8;
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = ComputerBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

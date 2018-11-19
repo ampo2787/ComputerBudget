@@ -1,0 +1,3 @@
+pod 'lottie-ios'
+target "ComputerBudget" do
+end
