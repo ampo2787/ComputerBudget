@@ -13,10 +13,16 @@
 		7A76E84B21926512005108F3 /* priceCalculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A76E84A21926512005108F3 /* priceCalculate.m */; };
 		7A76E8512192835F005108F3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A76E8502192835F005108F3 /* TableViewCell.m */; };
 		7A88751821A299C800C59C57 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A88751721A299C800C59C57 /* LaunchViewController.m */; };
+		7A8DE86E21B53BE6002C2E92 /* product.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE86D21B53BE6002C2E92 /* product.m */; };
 		7AA542DD21240B2A0022FA56 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DA21240B290022FA56 /* XPathQuery.m */; };
 		7AA542DE21240B2A0022FA56 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DB21240B290022FA56 /* TFHppleElement.m */; };
 		7AA542DF21240B2A0022FA56 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DC21240B2A0022FA56 /* TFHpple.m */; };
 		7AA542E2212415760022FA56 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA542E1212415760022FA56 /* libxml2.2.tbd */; };
+		7AC0CC2F21A2ACA7003E490F /* spirit_geek.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC2E21A2ACA7003E490F /* spirit_geek.json */; };
+		7AC0CC3321A2CD07003E490F /* worm.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC3221A2CD07003E490F /* worm.json */; };
+		7AC0CC3521A2CF70003E490F /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC3421A2CF70003E490F /* messages.json */; };
+		7AC0CC3721A2D29C003E490F /* coding_ape.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC3621A2D29C003E490F /* coding_ape.json */; };
+		7AC0CC3921A2D2A4003E490F /* animated_laptop_.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC3821A2D2A4003E490F /* animated_laptop_.json */; };
 		7AF827172113B15200AF8D29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827162113B15200AF8D29 /* AppDelegate.m */; };
 		7AF8271A2113B15200AF8D29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827192113B15200AF8D29 /* ViewController.m */; };
 		7AF8271D2113B15200AF8D29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF8271B2113B15200AF8D29 /* Main.storyboard */; };
@@ -31,13 +37,14 @@
 		7A677CB2219059770082BFF6 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		7A677CB621905A1A0082BFF6 /* parseEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = parseEngine.h; sourceTree = "<group>"; };
 		7A677CB721905A1A0082BFF6 /* parseEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = parseEngine.m; sourceTree = "<group>"; };
-		7A677CBC219065E50082BFF6 /* product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = product.h; sourceTree = "<group>"; };
 		7A76E84921926511005108F3 /* priceCalculate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = priceCalculate.h; sourceTree = "<group>"; };
 		7A76E84A21926512005108F3 /* priceCalculate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = priceCalculate.m; sourceTree = "<group>"; };
 		7A76E84F2192835F005108F3 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		7A76E8502192835F005108F3 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		7A88751621A299C800C59C57 /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
 		7A88751721A299C800C59C57 /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		7A8DE86C21B53BE6002C2E92 /* product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = product.h; sourceTree = "<group>"; };
+		7A8DE86D21B53BE6002C2E92 /* product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = product.m; sourceTree = "<group>"; };
 		7AA542D721240B290022FA56 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		7AA542D821240B290022FA56 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
 		7AA542D921240B290022FA56 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
@@ -45,6 +52,11 @@
 		7AA542DB21240B290022FA56 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		7AA542DC21240B2A0022FA56 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		7AA542E1212415760022FA56 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		7AC0CC2E21A2ACA7003E490F /* spirit_geek.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spirit_geek.json; sourceTree = "<group>"; };
+		7AC0CC3221A2CD07003E490F /* worm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = worm.json; sourceTree = "<group>"; };
+		7AC0CC3421A2CF70003E490F /* messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
+		7AC0CC3621A2D29C003E490F /* coding_ape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coding_ape.json; sourceTree = "<group>"; };
+		7AC0CC3821A2D2A4003E490F /* animated_laptop_.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animated_laptop_.json; sourceTree = "<group>"; };
 		7AF827122113B15200AF8D29 /* ComputerBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComputerBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF827152113B15200AF8D29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7AF827162113B15200AF8D29 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,9 +92,10 @@
 				7AA542D621240AFA0022FA56 /* hpple */,
 				7A677CB621905A1A0082BFF6 /* parseEngine.h */,
 				7A677CB721905A1A0082BFF6 /* parseEngine.m */,
-				7A677CBC219065E50082BFF6 /* product.h */,
 				7A76E84921926511005108F3 /* priceCalculate.h */,
 				7A76E84A21926512005108F3 /* priceCalculate.m */,
+				7A8DE86C21B53BE6002C2E92 /* product.h */,
+				7A8DE86D21B53BE6002C2E92 /* product.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,6 +103,7 @@
 		7A677CB5219059A10082BFF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7AC0CC2D21A2AC93003E490F /* LottieImage */,
 				7AF8271B2113B15200AF8D29 /* Main.storyboard */,
 				7A76E84F2192835F005108F3 /* TableViewCell.h */,
 				7A76E8502192835F005108F3 /* TableViewCell.m */,
@@ -117,6 +131,18 @@
 				E123C2F319120C9CAE8C127E /* libPods-ComputerBudget.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7AC0CC2D21A2AC93003E490F /* LottieImage */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0CC3821A2D2A4003E490F /* animated_laptop_.json */,
+				7AC0CC3621A2D29C003E490F /* coding_ape.json */,
+				7AC0CC3421A2CF70003E490F /* messages.json */,
+				7AC0CC3221A2CD07003E490F /* worm.json */,
+				7AC0CC2E21A2ACA7003E490F /* spirit_geek.json */,
+			);
+			path = LottieImage;
 			sourceTree = "<group>";
 		};
 		7AE1AE292129742400B74692 /* Controller */ = {
@@ -236,7 +262,12 @@
 			files = (
 				7AF827252113B15400AF8D29 /* LaunchScreen.storyboard in Resources */,
 				7AF827222113B15400AF8D29 /* Assets.xcassets in Resources */,
+				7AC0CC2F21A2ACA7003E490F /* spirit_geek.json in Resources */,
+				7AC0CC3321A2CD07003E490F /* worm.json in Resources */,
+				7AC0CC3721A2D29C003E490F /* coding_ape.json in Resources */,
 				7AF8271D2113B15200AF8D29 /* Main.storyboard in Resources */,
+				7AC0CC3921A2D2A4003E490F /* animated_laptop_.json in Resources */,
+				7AC0CC3521A2CF70003E490F /* messages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +313,7 @@
 				7AF827202113B15200AF8D29 /* ComputerBudget.xcdatamodeld in Sources */,
 				7AF827282113B15400AF8D29 /* main.m in Sources */,
 				7A76E8512192835F005108F3 /* TableViewCell.m in Sources */,
+				7A8DE86E21B53BE6002C2E92 /* product.m in Sources */,
 				7AF827172113B15200AF8D29 /* AppDelegate.m in Sources */,
 				7A88751821A299C800C59C57 /* LaunchViewController.m in Sources */,
 			);
@@ -363,6 +395,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PLIST_FILE_OUTPUT_FORMAT = binary;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -414,6 +447,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PLIST_FILE_OUTPUT_FORMAT = binary;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -426,6 +460,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z73D4U4HW8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/include/libxml2",
 					"$(inherited)",
@@ -448,6 +486,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z73D4U4HW8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/include/libxml2",
 					"$(inherited)",

@@ -1,17 +1,13 @@
 //
-//  product.h
+//  product.m
 //  ComputerBudget
 //
 //  Created by JihoonPark on 03/12/2018.
 //  Copyright © 2018 JihoonPark. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "product.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface product : NSObject
+@implementation product
 
 @end
-
-NS_ASSUME_NONNULL_END
