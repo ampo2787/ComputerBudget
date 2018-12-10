@@ -110,8 +110,10 @@
 }
 
 -(void)LottiePlay{
-    [self.testAnimation setLoopAnimation:YES];
-    [self.testAnimation play];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.testAnimation setLoopAnimation:YES];
+        [self.testAnimation play];
+    });
 }
 
 #pragma mark - PickerView Delegate & DataSource
@@ -159,47 +161,31 @@
 }
 
 - (IBAction)pushTableView:(UIButton *)sender {
-    [self LottiePlay];
     [self parsingData];
 }
 -(void)parsingData{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            TableViewController *tableView = [self.storyboard instantiateViewControllerWithIdentifier:@"tableView"];
-            priceCalculate *calculator = [[priceCalculate alloc]init];
-            [calculator setBudget:[NSNumber numberWithInt:[self.tfBudget.text intValue]]];
-            [calculator setTarget:self.tfBudget.text];
-    
-            parseEngine *engine = [[parseEngine alloc]init];
-            [engine setPriceList:calculator.getListDictionary];
-            [engine parse];
-    
-            [tableView setProductList:[engine productList]];
-            [tableView setPriceList:[engine finalPriceList]];
-            [tableView setImageList:[engine ImageList]];
-            [self.testAnimation stop];
-            [self.navigationController pushViewController:tableView animated:YES];
+    TableViewController *tableView = [self.storyboard instantiateViewControllerWithIdentifier:@"tableView"];
+    priceCalculate *calculator = [[priceCalculate alloc]init];
+    parseEngine *engine = [[parseEngine alloc]init];
+    [self LottiePlay];
+    [calculator setBudget:[NSNumber numberWithInt:[self.tfBudget.text intValue]]];
+    [calculator setTarget:self.tfBudget.text];
+    [engine setPriceList:calculator.getListDictionary];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            BOOL res = [engine parse];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if(res){
+                    [tableView setProductList:[engine productList]];
+                    [tableView setPriceList:[engine finalPriceList]];
+                    [tableView setImageList:[engine ImageList]];
+                    [self.testAnimation stop];
+                    [self.navigationController pushViewController:tableView animated:YES];
+                }
+            });
+            
         });
 
 }
-/*
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier  isEqual: @"tableView"]){
-        [self LottiePlay];
-        TableViewController *tableView = segue.destinationViewController;
-        priceCalculate *calculator = [[priceCalculate alloc]init];
-        [calculator setBudget:[NSNumber numberWithInt:[self.tfBudget.text intValue]]];
-        [calculator setTarget:self.tfBudget.text];
-    
-        parseEngine *engine = [[parseEngine alloc]init];
-        [engine setPriceList:calculator.getListDictionary];
-        [engine parse];
-        [tableView setProductList:[engine productList]];
-        [tableView setPriceList:[engine finalPriceList]];
-        [tableView setImageList:[engine ImageList]];
-        [self.testAnimation stop];
-    }
-}
-*/
 
 
 @end

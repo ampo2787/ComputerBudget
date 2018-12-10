@@ -70,7 +70,7 @@
 }
 
 #pragma mark - private method
-- (void)parse{
+- (BOOL)parse{
     [self parseCPU:[[self.priceList objectForKey:CPU] intValue]];
     if(![[self.priceList objectForKey:GPU] isEqualToString:@"0"]){
         [self parseGPU:[[self.priceList objectForKey:GPU] intValue]];
@@ -89,6 +89,7 @@
     }
     [self parseCase:[[self.priceList objectForKey:CASE]intValue]];
     //mainboard는 cpu에서 이어서 파싱.
+    return true;
 }
 
 -(void)htmlInsert:(NSString *)url withType:(NSString*)type withProductName:(NSString *)name{

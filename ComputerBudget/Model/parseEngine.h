@@ -17,7 +17,7 @@
 @property (nonatomic) NSMutableDictionary *finalPriceList;
 @property (nonatomic) NSMutableDictionary *ImageList;
 
-- (void)parse;
+- (BOOL)parse;
 
 @end
 
