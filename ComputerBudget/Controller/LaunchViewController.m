@@ -18,8 +18,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self LottieViewSetup];
 }
+
+- (void) LottieViewSetup{
+    NSString *myFilePath = [[NSBundle mainBundle] pathForResource:@"spirit_geek" ofType:@"json"];
+    
+    NSData *myData = [NSData dataWithContentsOfFile:myFilePath];
+    
+    NSError *error = nil;
+    
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:myData
+                                                             options:kNilOptions
+                                                               error:&error];
+    
+    LOTAnimationView *testAnimation = [LOTAnimationView animationFromJSON:jsonDict];
+    [testAnimation setFrame:CGRectMake(0, self.view.frame.origin.y/2 + 250, 500, 500)];
+    [self.view addSubview:testAnimation];
+    
+    [testAnimation play];
+    [testAnimation setLoopAnimation:YES];
+}
+
 
 /*
 #pragma mark - Navigation

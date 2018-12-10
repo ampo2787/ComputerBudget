@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TableViewCell.h"
+#import "product.h"
 
+@interface TableViewController : UITableViewController <UIDocumentInteractionControllerDelegate>
 
-@interface TableViewController : UITableViewController
-
+@property UIDocumentInteractionController * interactionController;
 @property (weak, nonatomic) IBOutlet TableViewCell *tableViewCell;
 
 @property NSDictionary *productList;

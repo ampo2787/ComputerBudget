@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+static NSString *const CPU = @"cpu";
+static NSString *const GPU = @"gpu";
+static NSString *const RAM = @"ram";
+static NSString *const DISK = @"disk";
+static NSString *const POWER = @"power";
+static NSString *const MAIN = @"mainBoard";
+static NSString *const COOLER = @"cooler";
+static NSString *const CASE = @"case";
 
 @interface product : NSObject
 
 @end
-
-NS_ASSUME_NONNULL_END

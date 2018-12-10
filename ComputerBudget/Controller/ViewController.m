@@ -7,12 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "Lottie/Lottie.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *tfBudget;
 @property (weak, nonatomic) IBOutlet UITextField *tfPurpose;
-
+@property LOTAnimationView *testAnimation;
 
 @end
 
@@ -22,12 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
     UIToolbar *toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.layer.borderWidth, 40)];
     [toolbar setCenter:self.view.center];
     UIBarButtonItem *btnDone = [[UIBarButtonItem alloc]initWithTitle:@"선택" style:UIBarButtonItemStyleDone target:self action:@selector(pickerViewDone:)];
     UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc]initWithTitle:@"취소" style:UIBarButtonItemStyleDone target:self action:@selector(pickerViewCancel:)];
+    [self LottieViewSetup];
     
     [toolbar setItems:[NSArray arrayWithObjects:btnDone,btnCancel, nil] animated:YES];
     //pickerView의 toolbar와 done버튼 추가.
@@ -43,14 +43,13 @@
     [budgetPickerView setDelegate:self];
     [budgetPickerView setDataSource:self];
     
-    
-    
     [self.tfBudget setInputView:budgetPickerView];
     [self.tfBudget setInputAccessoryView:toolbar];
 
     //예산 PickerView 추가.
     
     self.tfBudget.text = @"50만원 이하";
+    self.tfBudgetText = self.tfBudget.text;
     //기본값 설정.
     //예산 관련 pickerView 완료.
     
@@ -68,17 +67,51 @@
     [self.tfPurpose setInputView:purposePickerView];
     //목적 PickerView 추가.
     self.tfPurpose.text = @"간단한 사무용, 동영상 감상";
-  
+    self.tfPurposeText = self.tfPurpose.text;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    [self.navigationController.navigationBar setHidden:YES];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Lottie Animation
+- (void) LottieViewSetup{
+    NSString *myFilePath = [[NSBundle mainBundle] pathForResource:@"coding_ape" ofType:@"json"];
+    
+    NSData *myData = [NSData dataWithContentsOfFile:myFilePath];
+    
+    NSError *error = nil;
+    
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:myData
+                                                             options:kNilOptions
+                                                               error:&error];
+    
+    self.testAnimation = [LOTAnimationView animationFromJSON:jsonDict];
+    [self.testAnimation setBackgroundColor:[UIColor lightGrayColor]];
+    [self.testAnimation setFrame:CGRectMake(0, 0, self.view.frame.size.width, 500)];
+    [self.view addSubview:self.testAnimation];
+    
+    /*
+    NSLog(@"subviews - %@", self.view.subviews);
+    NSLog(@"testanim - %@", testAnimation.description);
+    if (testAnimation.isAnimationPlaying)
+    {
+        NSLog(@"is playing");
+    }
+     */
+}
+
+-(void)LottiePlay{
+    [self.testAnimation setLoopAnimation:YES];
+    [self.testAnimation play];
 }
 
 #pragma mark - PickerView Delegate & DataSource
@@ -110,14 +143,12 @@
 #pragma mark - Action
 
 -(void)pickerViewDone:(id)sender{
-    [self.tfBudget setText:self.tfBudgetText];
-    [self.tfPurpose setText:self.tfPurposeText];
-    
-    [self.tfBudget resignFirstResponder];
-    [self.tfPurpose resignFirstResponder];
-    
-    [purposePickerView removeFromSuperview];
-    [budgetPickerView removeFromSuperview];
+        [self.tfBudget setText:self.tfBudgetText];
+        [self.tfBudget resignFirstResponder];
+        [budgetPickerView removeFromSuperview];
+        [self.tfPurpose setText:self.tfPurposeText];
+        [self.tfPurpose resignFirstResponder];
+        [purposePickerView removeFromSuperview];
 }
 
 -(void)pickerViewCancel:(id)sender{
@@ -127,22 +158,48 @@
     [budgetPickerView removeFromSuperview];
 }
 
-- (IBAction)ChoiceFinish:(id)sender {
-    TableViewController *tableView = [self.storyboard instantiateViewControllerWithIdentifier:@"tableView"];
-    
-    priceCalculate *calculator = [[priceCalculate alloc]init];
-    [calculator setBudget:[NSNumber numberWithInt:[self.tfBudget.text intValue]]];
-    [calculator setTarget:self.tfBudget.text];
-    
-    parseEngine *engine = [[parseEngine alloc]init];
-    [engine setPriceList:calculator.getListDictionary];
-    [engine parse];
-    [tableView setProductList:[engine productList]];
-    [tableView setPriceList:[engine finalPriceList]];
-    [tableView setImageList:[engine ImageList]];
-    [self.navigationController pushViewController:tableView animated:YES];
+- (IBAction)pushTableView:(UIButton *)sender {
+    [self LottiePlay];
+    [self parsingData];
 }
+-(void)parsingData{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            TableViewController *tableView = [self.storyboard instantiateViewControllerWithIdentifier:@"tableView"];
+            priceCalculate *calculator = [[priceCalculate alloc]init];
+            [calculator setBudget:[NSNumber numberWithInt:[self.tfBudget.text intValue]]];
+            [calculator setTarget:self.tfBudget.text];
+    
+            parseEngine *engine = [[parseEngine alloc]init];
+            [engine setPriceList:calculator.getListDictionary];
+            [engine parse];
+    
+            [tableView setProductList:[engine productList]];
+            [tableView setPriceList:[engine finalPriceList]];
+            [tableView setImageList:[engine ImageList]];
+            [self.testAnimation stop];
+            [self.navigationController pushViewController:tableView animated:YES];
+        });
 
+}
+/*
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier  isEqual: @"tableView"]){
+        [self LottiePlay];
+        TableViewController *tableView = segue.destinationViewController;
+        priceCalculate *calculator = [[priceCalculate alloc]init];
+        [calculator setBudget:[NSNumber numberWithInt:[self.tfBudget.text intValue]]];
+        [calculator setTarget:self.tfBudget.text];
+    
+        parseEngine *engine = [[parseEngine alloc]init];
+        [engine setPriceList:calculator.getListDictionary];
+        [engine parse];
+        [tableView setProductList:[engine productList]];
+        [tableView setPriceList:[engine finalPriceList]];
+        [tableView setImageList:[engine ImageList]];
+        [self.testAnimation stop];
+    }
+}
+*/
 
 
 @end

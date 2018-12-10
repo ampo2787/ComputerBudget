@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TFHpple.h"
+#import "product.h"
 
 @interface parseEngine : NSObject
 

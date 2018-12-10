@@ -17,8 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [NSTimer scheduledTimerWithTimeInterval:3.8 target:self selector:@selector(runningAfter5Seconds) userInfo:nil repeats:NO];
     return YES;
 }
+
+- (void)runningAfter5Seconds{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *naviController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+    //UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+    self.window.rootViewController = naviController;
+    [self.window makeKeyAndVisible];
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
