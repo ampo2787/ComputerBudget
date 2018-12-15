@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>kakao7d08b518bb079f445c1a620f6a2b492b</string>
-        <string>kakaolink</string>
-        <string>kakaotalk-5.9.7</string>
-    </array>
-    <key>KAKAO_APP_KEY</key>
-    <string>7d08b518bb079f445c1a620f6a2b492b</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Our application needs permission to write photos...</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -29,12 +21,10 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict/>
-        <key>CFBundleTypeRole</key>
-        <string>Editor</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-            <string>kakao7d08b518bb079f445c1a620f6a2b492b</string>
-        </array>
+		<string>Editor</string>
+		<array>
+			<string>kakao7d08b518bb079f445c1a620f6a2b492b</string>
+		</array>
 		<dict/>
 	</array>
 	<key>CFBundleVersion</key>

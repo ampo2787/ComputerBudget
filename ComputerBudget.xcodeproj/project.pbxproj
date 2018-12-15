@@ -19,10 +19,7 @@
 		7AA542DF21240B2A0022FA56 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA542DC21240B2A0022FA56 /* TFHpple.m */; };
 		7AA542E2212415760022FA56 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA542E1212415760022FA56 /* libxml2.2.tbd */; };
 		7AC0CC2F21A2ACA7003E490F /* spirit_geek.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC2E21A2ACA7003E490F /* spirit_geek.json */; };
-		7AC0CC3321A2CD07003E490F /* worm.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC3221A2CD07003E490F /* worm.json */; };
-		7AC0CC3521A2CF70003E490F /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC3421A2CF70003E490F /* messages.json */; };
 		7AC0CC3721A2D29C003E490F /* coding_ape.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC3621A2D29C003E490F /* coding_ape.json */; };
-		7AC0CC3921A2D2A4003E490F /* animated_laptop_.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0CC3821A2D2A4003E490F /* animated_laptop_.json */; };
 		7AF827172113B15200AF8D29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827162113B15200AF8D29 /* AppDelegate.m */; };
 		7AF8271A2113B15200AF8D29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827192113B15200AF8D29 /* ViewController.m */; };
 		7AF8271D2113B15200AF8D29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF8271B2113B15200AF8D29 /* Main.storyboard */; };
@@ -31,6 +28,19 @@
 		7AF827252113B15400AF8D29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF827232113B15400AF8D29 /* LaunchScreen.storyboard */; };
 		7AF827282113B15400AF8D29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF827272113B15400AF8D29 /* main.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7AF3FC0521C0DB79002CB099 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7A677CB1219059770082BFF6 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -53,10 +63,8 @@
 		7AA542DC21240B2A0022FA56 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		7AA542E1212415760022FA56 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		7AC0CC2E21A2ACA7003E490F /* spirit_geek.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spirit_geek.json; sourceTree = "<group>"; };
-		7AC0CC3221A2CD07003E490F /* worm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = worm.json; sourceTree = "<group>"; };
-		7AC0CC3421A2CF70003E490F /* messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
 		7AC0CC3621A2D29C003E490F /* coding_ape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coding_ape.json; sourceTree = "<group>"; };
-		7AC0CC3821A2D2A4003E490F /* animated_laptop_.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animated_laptop_.json; sourceTree = "<group>"; };
+		7AF3FBF521C0DB79002CB099 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		7AF827122113B15200AF8D29 /* ComputerBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComputerBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF827152113B15200AF8D29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7AF827162113B15200AF8D29 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 			children = (
 				7AA542E1212415760022FA56 /* libxml2.2.tbd */,
 				E123C2F319120C9CAE8C127E /* libPods-ComputerBudget.a */,
+				7AF3FBF521C0DB79002CB099 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,10 +145,7 @@
 		7AC0CC2D21A2AC93003E490F /* LottieImage */ = {
 			isa = PBXGroup;
 			children = (
-				7AC0CC3821A2D2A4003E490F /* animated_laptop_.json */,
 				7AC0CC3621A2D29C003E490F /* coding_ape.json */,
-				7AC0CC3421A2CF70003E490F /* messages.json */,
-				7AC0CC3221A2CD07003E490F /* worm.json */,
 				7AC0CC2E21A2ACA7003E490F /* spirit_geek.json */,
 			);
 			path = LottieImage;
@@ -213,6 +219,7 @@
 				7AF8270E2113B15200AF8D29 /* Sources */,
 				7AF8270F2113B15200AF8D29 /* Frameworks */,
 				7AF827102113B15200AF8D29 /* Resources */,
+				7AF3FC0521C0DB79002CB099 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -263,11 +270,8 @@
 				7AF827252113B15400AF8D29 /* LaunchScreen.storyboard in Resources */,
 				7AF827222113B15400AF8D29 /* Assets.xcassets in Resources */,
 				7AC0CC2F21A2ACA7003E490F /* spirit_geek.json in Resources */,
-				7AC0CC3321A2CD07003E490F /* worm.json in Resources */,
 				7AC0CC3721A2D29C003E490F /* coding_ape.json in Resources */,
 				7AF8271D2113B15200AF8D29 /* Main.storyboard in Resources */,
-				7AC0CC3921A2D2A4003E490F /* animated_laptop_.json in Resources */,
-				7AC0CC3521A2CF70003E490F /* messages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

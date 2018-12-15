@@ -24,7 +24,6 @@
 - (void)runningAfter5Seconds{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *naviController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-    //UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView"];
     self.window.rootViewController = naviController;
     [self.window makeKeyAndVisible];
 }

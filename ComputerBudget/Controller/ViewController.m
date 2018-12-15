@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfBudget;
 @property (weak, nonatomic) IBOutlet UITextField *tfPurpose;
 @property LOTAnimationView *testAnimation;
+@property BOOL buttonIsTouched;
+@property (weak, nonatomic) IBOutlet UIButton *pushNextViewBtn;
 
 @end
 
@@ -74,6 +76,8 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     [self.navigationController.navigationBar setHidden:YES];
+    [self.pushNextViewBtn setEnabled:YES];
+
 }
 
 
@@ -161,6 +165,7 @@
 }
 
 - (IBAction)pushTableView:(UIButton *)sender {
+        [self.pushNextViewBtn setEnabled:NO];
     [self parsingData];
 }
 -(void)parsingData{
@@ -169,7 +174,7 @@
     parseEngine *engine = [[parseEngine alloc]init];
     [self LottiePlay];
     [calculator setBudget:[NSNumber numberWithInt:[self.tfBudget.text intValue]]];
-    [calculator setTarget:self.tfBudget.text];
+    [calculator setTarget:self.tfPurpose.text];
     [engine setPriceList:calculator.getListDictionary];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             BOOL res = [engine parse];
@@ -185,6 +190,10 @@
             
         });
 
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    return NO;
 }
 
 

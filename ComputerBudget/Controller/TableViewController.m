@@ -11,9 +11,9 @@
 @interface TableViewController ()
 @property (nonatomic) NSMutableArray *productOkArray;
 @property (nonatomic) NSString *titleString;
-@property (nonatomic, strong) UIImage *image;
+@property (nonatomic) NSMutableArray *firstLoadArray;
 
-
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationTitle;
 - (IBAction)btnShare:(UIBarButtonItem *)sender;
 
 @end
@@ -33,6 +33,13 @@
         _titleString = [[NSString alloc]init];
     }
     return _titleString;
+}
+
+-(NSMutableArray *)firstLoadArray{
+    if(_firstLoadArray == nil){
+        _firstLoadArray = [[NSMutableArray alloc]init];
+    }
+    return _firstLoadArray;
 }
 
 #pragma mark - Action
@@ -99,6 +106,21 @@
     if([[self.priceList objectForKey:COOLER] isEqualToString:@"0"]){
         [self.productOkArray removeObject:COOLER];
     }
+    for(int i=0; i<self.priceList.allKeys.count; i++){
+    NSString * temp = [self.priceList objectForKey:[self.priceList.allKeys objectAtIndex:i]];
+    if([temp containsString:@","]){
+        temp = [temp stringByReplacingOccurrencesOfString:@"," withString:@""];
+    }
+    if([self.navigationTitle.title isEqualToString:@""]){
+        [self.navigationTitle setTitle:temp];
+    }else{
+        int value = [self.navigationTitle.title intValue];
+        int tempInt = [temp intValue];
+        tempInt += value;
+        NSString *temptemp = [[NSString alloc]initWithFormat:@"%d", tempInt];
+        [self.navigationTitle setTitle:temptemp];
+    }
+    }
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -112,46 +134,31 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    for(int i=0; i<self.productOkArray.count; i++){
+        [self.firstLoadArray addObject:@"0"];
+    }
     return self.productOkArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TableViewCell *cell = (id)[self.tableView cellForRowAtIndexPath:indexPath];
-    if(cell == nil){
-        cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewCell" forIndexPath:indexPath];
-        UIImage *cellImage = self.image;
-        cellImage = [[UIImage alloc]initWithData:[NSData dataWithContentsOfURL:[self.imageList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]]];
-        [cell.imageView setImage:cellImage];
-        [cell.lbProduct setText:[self.productList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]];
-        [cell.lbPrice setText:[self.priceList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewCell" forIndexPath:indexPath];
+    if([[self.firstLoadArray objectAtIndex:indexPath.row] isEqualToString:@"0"]){
+        [cell.imageView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[self.imageList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]]]];
+        [self.firstLoadArray replaceObjectAtIndex:indexPath.row withObject:@"1"];
     }
-    else{
-        [self loadingImage:[self.imageList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]] withIndexPath:indexPath];
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSData * tempData = [NSData dataWithContentsOfURL:[self.imageList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(cell){
+                UIImage *tempimage = [UIImage imageWithData:tempData];
+                [cell.imageView setImage:tempimage];
+                [cell.lbProduct setText:[self.productList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]];
+                [cell.lbPrice setText:[self.priceList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]];
+                [cell setNeedsDisplay];
+            }
+        });
+    });
     return cell;
-}
-
-#pragma mark - Image Loading
--(void)loadingImage:(NSURL *)url withIndexPath:(NSIndexPath*)indexPath{
-    self.image = nil;
-    if(url){
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-        NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error){
-            UIImage *tempimage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                TableViewCell *updateCell = (id)[self.tableView cellForRowAtIndexPath:indexPath];
-                if(updateCell){
-                    [updateCell.imageView setImage:tempimage];
-                    [updateCell.lbProduct setText:[self.productList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]];
-                    [updateCell.lbPrice setText:[self.priceList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]];
-                    [self.tableView setNeedsDisplay];
-                }
-            });
-        }];
-        [task resume];
-    }
 }
 
 #pragma mark - UIDocumentInteractionControllerDelegate

@@ -229,7 +229,7 @@
     else if(price <= 10){
         [self htmlInsert:@"http://prod.danawa.com/info/?pcode=5568582&keyword=%EC%BB%B4%ED%93%A8%ED%84%B0%20%EC%BC%80%EC%9D%B4%EC%8A%A4&cate=112775" withType:CASE withProductName:@"ABKO SUITMASTER 513G 이지스 강화유리 HALO"];
     }
-    else if(price <= 10){
+    else if(price <= 15){
         [self htmlInsert:@"http://prod.danawa.com/info/?pcode=6166486&keyword=%EC%BB%B4%ED%93%A8%ED%84%B0%20%EC%BC%80%EC%9D%B4%EC%8A%A4&cate=112775" withType:CASE withProductName:@"NZXT H500 Matte Black"];
     }
     else{

@@ -11,7 +11,7 @@
 #import "parseEngine.h"
 #import "TableViewController.h"
 
-@interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate>{
+@interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>{
     UIPickerView *budgetPickerView;
     UIPickerView *purposePickerView;
 
