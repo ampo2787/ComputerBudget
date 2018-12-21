@@ -56,7 +56,7 @@
         [self priceListSetting:@"5" withProduct:COOLER];
         [self priceListSetting:@"5" withProduct:CASE];
     }
-    else if(high < easyMoney && easyMoney <= maximum) {
+    else if(middle < easyMoney && easyMoney <= high) {
         [self priceListSetting:@"35" withProduct:CPU];
         [self priceListSetting:@"35" withProduct:GPU];
         [self priceListSetting:@"25" withProduct:RAM];

@@ -135,7 +135,7 @@
     else if(price <= 20){
         [self htmlInsert:@"http://prod.danawa.com/info/?pcode=4597633&keyword=gtx%201050&cate=112753" withType:GPU withProductName:@"gtx - 1050 ti 4gb"];
     }
-    else if(price <= 30){
+    else if(price <= 35){
         [self htmlInsert:@"http://prod.danawa.com/info/?pcode=4360026&keyword=gtx%201060&cate=112753" withType:GPU withProductName:@"gtx - 1060 3gb"];
     }
     else{

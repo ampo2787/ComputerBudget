@@ -168,6 +168,7 @@
         [self.pushNextViewBtn setEnabled:NO];
     [self parsingData];
 }
+
 -(void)parsingData{
     TableViewController *tableView = [self.storyboard instantiateViewControllerWithIdentifier:@"tableView"];
     priceCalculate *calculator = [[priceCalculate alloc]init];
@@ -187,9 +188,7 @@
                     [self.navigationController pushViewController:tableView animated:YES];
                 }
             });
-            
         });
-
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
