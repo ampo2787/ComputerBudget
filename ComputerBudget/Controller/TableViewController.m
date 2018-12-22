@@ -142,8 +142,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewCell" forIndexPath:indexPath];
+    
     if([[self.firstLoadArray objectAtIndex:indexPath.row] isEqualToString:@"0"]){
-        [cell.imageView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[self.imageList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]]]];
+        [cell.productView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[self.imageList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]]]];
         [self.firstLoadArray replaceObjectAtIndex:indexPath.row withObject:@"1"];
     }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
@@ -151,7 +152,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if(cell){
                 UIImage *tempimage = [UIImage imageWithData:tempData];
-                [cell.imageView setImage:tempimage];
+                //[tempimage drawInRect:cell.imageView.frame];
+                [cell.productView setImage:tempimage];
                 [cell.lbProduct setText:[self.productList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]];
                 [cell.lbPrice setText:[self.priceList objectForKey:[self.productOkArray objectAtIndex:indexPath.row]]];
                 [cell setNeedsDisplay];

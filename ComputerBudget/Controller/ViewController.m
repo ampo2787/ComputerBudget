@@ -17,6 +17,7 @@
 @property BOOL buttonIsTouched;
 @property (weak, nonatomic) IBOutlet UIButton *pushNextViewBtn;
 
+
 @end
 
 @implementation ViewController
@@ -148,16 +149,17 @@
 
 #pragma mark - Action
 
--(void)pickerViewDone:(id)sender{
+-(void)pickerViewDone:(UIBarButtonItem *)sender{
         [self.tfBudget setText:self.tfBudgetText];
         [self.tfBudget resignFirstResponder];
         [budgetPickerView removeFromSuperview];
+
         [self.tfPurpose setText:self.tfPurposeText];
         [self.tfPurpose resignFirstResponder];
         [purposePickerView removeFromSuperview];
 }
 
--(void)pickerViewCancel:(id)sender{
+-(void)pickerViewCancel:(UIBarButtonItem *)sender{
     [self.tfBudget resignFirstResponder];
     [self.tfPurpose resignFirstResponder];
     [purposePickerView removeFromSuperview];
@@ -165,7 +167,7 @@
 }
 
 - (IBAction)pushTableView:(UIButton *)sender {
-        [self.pushNextViewBtn setEnabled:NO];
+    [self.pushNextViewBtn setEnabled:NO];
     [self parsingData];
 }
 
