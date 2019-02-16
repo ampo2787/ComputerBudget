@@ -86,7 +86,7 @@
         [self priceListSetting:@"0" withProduct:COOLER];
     }
     else if([self.target isEqualToString:@"가벼운 게임, 적당한 활용"]){
-        [self priceListSetting:@"10" withProduct:CPU];
+        [self priceListSetting:@"15" withProduct:CPU];
     }
     else if([self.target isEqualToString:@"고오급 게임, 그래픽 작업"]){
         

@@ -29,6 +29,8 @@
 @property (nonatomic) TFHppleElement *data;
 //파싱하는데 필요한 변수.
 
+@property Boolean NAVER_ON;
+
 @end
 
 @implementation parseEngine
@@ -71,24 +73,39 @@
 
 #pragma mark - private method
 - (BOOL)parse{
-    [self parseCPU:[[self.priceList objectForKey:CPU] intValue]];
-    if(![[self.priceList objectForKey:GPU] isEqualToString:@"0"]){
-        [self parseGPU:[[self.priceList objectForKey:GPU] intValue]];
-    }
+    self.NAVER_ON = YES;
+    
+    if(!self.NAVER_ON){
+        [self parseCPU:[[self.priceList objectForKey:CPU] intValue]];
+        if(![[self.priceList objectForKey:GPU] isEqualToString:@"0"]){
+            [self parseGPU:[[self.priceList objectForKey:GPU] intValue]];
+        }
+        else{
+            [self.finalPriceList setObject:@"0" forKey:GPU];
+        }
+        [self parseRam:[[self.priceList objectForKey:RAM] intValue]];
+        [self parseDisk:[[self.priceList objectForKey:DISK] intValue]];
+        [self parsePower:[[self.priceList objectForKey:POWER] intValue]];
+        if(![[self.priceList objectForKey:COOLER] isEqualToString:@"0"]){
+            [self parseCooler:[[self.priceList objectForKey:COOLER] intValue]];
+        }
+        else{
+            [self.finalPriceList setObject:@"0" forKey:COOLER];
+        }
+            [self parseCase:[[self.priceList objectForKey:CASE]intValue]];
+        //mainboard는 cpu에서 이어서 파싱.
+        }
     else{
-        [self.finalPriceList setObject:@"0" forKey:GPU];
+        naverParseEngine *NEngine = [[naverParseEngine alloc]init];
+        //처리해야할 것 : 상품명, 가격, imageURL
+        [NEngine callURLWithUrl1:@"" search:@""];
+        [NEngine callURLWithUrl1:@"" search:@""];
+        [NEngine callURLWithUrl1:@"" search:@""];
+        [NEngine callURLWithUrl1:@"" search:@""];
+        [NEngine callURLWithUrl1:@"" search:@""];
+
     }
-    [self parseRam:[[self.priceList objectForKey:RAM] intValue]];
-    [self parseDisk:[[self.priceList objectForKey:DISK] intValue]];
-    [self parsePower:[[self.priceList objectForKey:POWER] intValue]];
-    if(![[self.priceList objectForKey:COOLER] isEqualToString:@"0"]){
-        [self parseCooler:[[self.priceList objectForKey:COOLER] intValue]];
-    }
-    else{
-        [self.finalPriceList setObject:@"0" forKey:COOLER];
-    }
-    [self parseCase:[[self.priceList objectForKey:CASE]intValue]];
-    //mainboard는 cpu에서 이어서 파싱.
+    
     return true;
 }
 

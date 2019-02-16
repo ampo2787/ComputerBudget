@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TFHpple.h"
 #import "product.h"
+#import "ComputerBudget-Swift.h"
 
 @interface parseEngine : NSObject
 

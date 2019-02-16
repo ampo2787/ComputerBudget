@@ -39,13 +39,5 @@
             </objects>
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
-        <!--Main-->
-        <scene sceneID="k3s-Dl-jXB">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Main" storyboardName="Main" id="tGN-4f-aBe" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="077-aQ-w8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="581" y="175"/>
-        </scene>
     </scenes>
 </document>

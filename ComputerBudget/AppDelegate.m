@@ -16,7 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     [NSTimer scheduledTimerWithTimeInterval:3.8 target:self selector:@selector(runningAfter5Seconds) userInfo:nil repeats:NO];
     return YES;
 }

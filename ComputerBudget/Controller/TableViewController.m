@@ -107,19 +107,20 @@
         [self.productOkArray removeObject:COOLER];
     }
     for(int i=0; i<self.priceList.allKeys.count; i++){
-    NSString * temp = [self.priceList objectForKey:[self.priceList.allKeys objectAtIndex:i]];
-    if([temp containsString:@","]){
+        NSString * temp = [self.priceList objectForKey:[self.priceList.allKeys objectAtIndex:i]];
+        if([temp containsString:@","]){
         temp = [temp stringByReplacingOccurrencesOfString:@"," withString:@""];
-    }
-    if([self.navigationTitle.title isEqualToString:@""]){
-        [self.navigationTitle setTitle:temp];
-    }else{
-        int value = [self.navigationTitle.title intValue];
-        int tempInt = [temp intValue];
-        tempInt += value;
-        NSString *temptemp = [[NSString alloc]initWithFormat:@"%d", tempInt];
-        [self.navigationTitle setTitle:temptemp];
-    }
+        }
+        if([self.navigationTitle.title isEqualToString:@""]){
+            [self.navigationTitle setTitle:temp];
+        }
+        else{
+            int value = [self.navigationTitle.title intValue];
+            int tempInt = [temp intValue];
+            tempInt += value;
+            NSString *temptemp = [[NSString alloc]initWithFormat:@"%d", tempInt];
+            [self.navigationTitle setTitle:temptemp];
+        }
     }
 }
 - (void)viewWillAppear:(BOOL)animated{

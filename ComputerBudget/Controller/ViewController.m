@@ -78,7 +78,6 @@
     [super viewWillAppear:YES];
     [self.navigationController.navigationBar setHidden:YES];
     [self.pushNextViewBtn setEnabled:YES];
-
 }
 
 
@@ -90,11 +89,8 @@
 #pragma mark - Lottie Animation
 - (void) LottieViewSetup{
     NSString *myFilePath = [[NSBundle mainBundle] pathForResource:@"coding_ape" ofType:@"json"];
-    
     NSData *myData = [NSData dataWithContentsOfFile:myFilePath];
-    
     NSError *error = nil;
-    
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:myData
                                                              options:kNilOptions
                                                                error:&error];
@@ -103,15 +99,6 @@
     [self.testAnimation setBackgroundColor:[UIColor lightGrayColor]];
     [self.testAnimation setFrame:CGRectMake(0, 0, self.view.frame.size.width, 500)];
     [self.view addSubview:self.testAnimation];
-    
-    /*
-    NSLog(@"subviews - %@", self.view.subviews);
-    NSLog(@"testanim - %@", testAnimation.description);
-    if (testAnimation.isAnimationPlaying)
-    {
-        NSLog(@"is playing");
-    }
-     */
 }
 
 -(void)LottiePlay{
@@ -135,7 +122,6 @@
     }
 }
 
-
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     if(pickerView == budgetPickerView){
         self.tfBudgetText = [budgetArray objectAtIndex:row];
@@ -150,13 +136,13 @@
 #pragma mark - Action
 
 -(void)pickerViewDone:(UIBarButtonItem *)sender{
-        [self.tfBudget setText:self.tfBudgetText];
-        [self.tfBudget resignFirstResponder];
-        [budgetPickerView removeFromSuperview];
-
-        [self.tfPurpose setText:self.tfPurposeText];
-        [self.tfPurpose resignFirstResponder];
-        [purposePickerView removeFromSuperview];
+    [self.tfBudget setText:self.tfBudgetText];
+    [self.tfBudget resignFirstResponder];
+    [budgetPickerView removeFromSuperview];
+    
+    [self.tfPurpose setText:self.tfPurposeText];
+    [self.tfPurpose resignFirstResponder];
+    [purposePickerView removeFromSuperview];
 }
 
 -(void)pickerViewCancel:(UIBarButtonItem *)sender{
