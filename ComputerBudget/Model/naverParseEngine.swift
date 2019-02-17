@@ -12,10 +12,11 @@ import UIKit
     
     var Json_Text : String?
     
-    func callURL(url1 : String, search : String){
+    func callURL(search : String){
         let ClientID = "MfBgutVQe5VQcXPIvvjH"
         let ClientSecret = "ppbyHNxhzR"
         
+        let url1 = "https://openapi.naver.com/v1/search/shop.json"
         let addQuery = url1+search
         let encoded = addQuery.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         //한글 검색어도 사용할 수 있도록 함

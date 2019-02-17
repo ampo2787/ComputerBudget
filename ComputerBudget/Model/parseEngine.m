@@ -98,11 +98,7 @@
     else{
         naverParseEngine *NEngine = [[naverParseEngine alloc]init];
         //처리해야할 것 : 상품명, 가격, imageURL
-        [NEngine callURLWithUrl1:@"" search:@""];
-        [NEngine callURLWithUrl1:@"" search:@""];
-        [NEngine callURLWithUrl1:@"" search:@""];
-        [NEngine callURLWithUrl1:@"" search:@""];
-        [NEngine callURLWithUrl1:@"" search:@""];
+        [NEngine callURLWithSearch:@"i5 - 8500"];
 
     }
     
