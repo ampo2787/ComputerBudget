@@ -94,11 +94,16 @@
         }
             [self parseCase:[[self.priceList objectForKey:CASE]intValue]];
         //mainboard는 cpu에서 이어서 파싱.
-        }
+    }
     else{
         naverParseEngine *NEngine = [[naverParseEngine alloc]init];
         //처리해야할 것 : 상품명, 가격, imageURL
         [NEngine callURLWithSearch:@"i5 - 8500"];
+        [NEngine callURLWithSearch:@"gtx - 1050 ti 4gb"];
+        [NEngine callURLWithSearch:@"samsung ddr4 8gb - 21300"];
+        [NEngine callURLWithSearch:@"ADATA Ultimate SU800 M.2 2280 STCOM (256GB)"];
+        [NEngine callURLWithSearch:@"마이크로닉스 Classic II 500W +12V Single Rail 85+"];
+        [NEngine callURLWithSearch:@"GIGABYTE GA-H110M-DS2V 듀러블에디션 피씨디렉트"];
 
     }
     
