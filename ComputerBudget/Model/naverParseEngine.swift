@@ -11,12 +11,15 @@ import UIKit
 @objcMembers class naverParseEngine: NSObject {
     
     var Json_Text : String?
+    var Name : String?
+    var Price : String?
+    var ImageURL : String?
     
     func callURL(search : String){
         let ClientID = "MfBgutVQe5VQcXPIvvjH"
         let ClientSecret = "ppbyHNxhzR"
         
-        let url1 = "https://openapi.naver.com/v1/search/shop.json"
+        let url1 = "https://openapi.naver.com/v1/search/blog?query="
         let addQuery = url1+search
         let encoded = addQuery.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         //한글 검색어도 사용할 수 있도록 함
@@ -40,6 +43,7 @@ import UIKit
                 DispatchQueue.main.async {
                     //var json = JSONSerialization.
                     self.Json_Text? = str
+                    self.Name? = self.extractionName(text: str)
                 }
                 
             }
@@ -50,6 +54,28 @@ import UIKit
         }
         
         task.resume()
+    }
+    
+    func extractionName(text:String) -> String {
+        
+        if let data = text.data(using: .utf8){
+            let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+            
+            
+
+        }
+        
+        return text
+        
+    }
+    
+    func extractionImageURL(text:String) -> String {
+        
+        return text
+    }
+    
+    func extractionPrice(text:String) -> String {
+        return text
     }
     
 }

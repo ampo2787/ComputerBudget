@@ -96,8 +96,10 @@
         //mainboard는 cpu에서 이어서 파싱.
     }
     else{
+        
         naverParseEngine *NEngine = [[naverParseEngine alloc]init];
         //처리해야할 것 : 상품명, 가격, imageURL
+        
         [NEngine callURLWithSearch:@"i5 - 8500"];
         [NEngine callURLWithSearch:@"gtx - 1050 ti 4gb"];
         [NEngine callURLWithSearch:@"samsung ddr4 8gb - 21300"];
