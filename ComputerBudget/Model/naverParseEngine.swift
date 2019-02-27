@@ -19,7 +19,7 @@ import UIKit
         let ClientID = "MfBgutVQe5VQcXPIvvjH"
         let ClientSecret = "ppbyHNxhzR"
         
-        let url1 = "https://openapi.naver.com/v1/search/blog?query="
+        let url1 = "https://openapi.naver.com/v1/search/shop.json?query="
         let addQuery = url1+search
         let encoded = addQuery.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         //한글 검색어도 사용할 수 있도록 함
@@ -40,11 +40,11 @@ import UIKit
                 let str = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) ?? ""
                 print(str)
                 
-                DispatchQueue.main.async {
-                    //var json = JSONSerialization.
-                    self.Json_Text? = str
-                    self.Name? = self.extractionName(text: str)
-                }
+                //DispatchQueue.main.async {
+                    self.Name = self.extractionName(text: str)
+                    self.Price = self.extractionPrice(text: str)
+                    self.ImageURL = self.extractionImageURL(text: str)
+                //}
                 
             }
             //통신 실패
@@ -57,15 +57,16 @@ import UIKit
     }
     
     func extractionName(text:String) -> String {
+        var NameText:String?
         
         if let data = text.data(using: .utf8){
             let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+            return json["title"] as? String
             
-            
-
         }
-        
-        return text
+        else{
+         return "fail"
+        }
         
     }
     
