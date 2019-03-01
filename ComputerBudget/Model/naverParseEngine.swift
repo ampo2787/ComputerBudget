@@ -57,15 +57,14 @@ import UIKit
     }
     
     func extractionName(text:String) -> String {
-        var NameText:String?
         
         if let data = text.data(using: .utf8){
             let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-            return json["title"] as? String
+            return json["title"] as! String
             
         }
         else{
-         return "fail"
+            return "fail"
         }
         
     }
