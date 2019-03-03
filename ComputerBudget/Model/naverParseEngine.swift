@@ -71,11 +71,25 @@ import UIKit
     
     func extractionImageURL(text:String) -> String {
         
-        return text
+        if let data = text.data(using: .utf8){
+            let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+            return json["url"] as! String
+            
+        }
+        else{
+            return "fail"
+        }
     }
     
     func extractionPrice(text:String) -> String {
-        return text
+        if let data = text.data(using: .utf8){
+            let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+            return json["lprice"] as! String
+            
+        }
+        else{
+            return "fail"
+        }
     }
     
 }
