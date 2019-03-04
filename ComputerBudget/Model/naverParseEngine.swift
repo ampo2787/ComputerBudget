@@ -73,7 +73,7 @@ import UIKit
         
         if let data = text.data(using: .utf8){
             let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-            return json["url"] as! String
+            return json["image"] as! String
             
         }
         else{
@@ -85,7 +85,6 @@ import UIKit
         if let data = text.data(using: .utf8){
             let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
             return json["lprice"] as! String
-            
         }
         else{
             return "fail"
