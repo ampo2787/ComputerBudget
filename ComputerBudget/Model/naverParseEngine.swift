@@ -57,24 +57,19 @@ import UIKit
     }
     
     func extractionName(text:String) -> String {
-        
         if let data = text.data(using: .utf8){
             let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
             return json["title"] as! String
-            
         }
         else{
             return "fail"
         }
-        
     }
     
     func extractionImageURL(text:String) -> String {
-        
         if let data = text.data(using: .utf8){
             let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
             return json["image"] as! String
-            
         }
         else{
             return "fail"
