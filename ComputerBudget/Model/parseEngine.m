@@ -92,7 +92,8 @@
         else{
             [self.finalPriceList setObject:@"0" forKey:COOLER];
         }
-            [self parseCase:[[self.priceList objectForKey:CASE]intValue]];
+        
+        [self parseCase:[[self.priceList objectForKey:CASE]intValue]];
         //mainboard는 cpu에서 이어서 파싱.
     }
     else{
@@ -100,23 +101,25 @@
         //처리해야할 것 : 상품명, 가격, imageURL
         
         [NEngine callURLWithSearch:@"i5 - 8500"];
-        [self listMakeForNaver:NEngine withType:CPU];
-        [NEngine callURLWithSearch:@"gtx - 1050 ti 4gb"];
-        [self listMakeForNaver:NEngine withType:GPU];
-        [NEngine callURLWithSearch:@"samsung ddr4 8gb - 21300"];
-        [self listMakeForNaver:NEngine withType:RAM];
-        [NEngine callURLWithSearch:@"ADATA Ultimate SU800 M.2 2280 STCOM (256GB)"];
-        [self listMakeForNaver:NEngine withType:DISK];
-        [NEngine callURLWithSearch:@"마이크로닉스 Classic II 500W +12V Single Rail 85+"];
-        [self listMakeForNaver:NEngine withType:POWER];
-        [NEngine callURLWithSearch:@"GIGABYTE GA-H110M-DS2V 듀러블에디션 피씨디렉트"];
-        [self listMakeForNaver:NEngine withType:MAIN];
+//        [self listMakeForNaver:NEngine withType:CPU];
+//        [NEngine callURLWithSearch:@"gtx - 1050 Ti 4gb"];
+//        [self listMakeForNaver:NEngine withType:GPU];
+//        [NEngine callURLWithSearch:@"samsung ddr4 8gb - 21300"];
+//        [self listMakeForNaver:NEngine withType:RAM];
+//        [NEngine callURLWithSearch:@"ADATA Ultimate SU800 M.2 2280 STCOM (256GB)"];
+//        [self listMakeForNaver:NEngine withType:DISK];
+//        [NEngine callURLWithSearch:@"마이크로닉스 Classic II 500W +12V Single Rail 85+"];
+//        [self listMakeForNaver:NEngine withType:POWER];
+//        [NEngine callURLWithSearch:@"GIGABYTE GA-H110M-DS2V 듀러블에디션 피씨디렉트"];
+//        [self listMakeForNaver:NEngine withType:MAIN];
     }
     
     return true;
 }
 
 -(void)listMakeForNaver:(naverParseEngine*)NEngine withType:(NSString *)Type{
+    NSString *temp = NEngine.Name;
+    NSLog(@"%@", temp);
     [self.productList setObject:NEngine.Name forKey:Type];
     [self.ImageList setObject:NEngine.ImageURL forKey:Type];
     [self.finalPriceList setObject:NEngine.Price forKey:Type];

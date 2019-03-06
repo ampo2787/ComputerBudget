@@ -38,13 +38,12 @@ import UIKit
             //통신 성공
             if let data = data {
                 let str = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) ?? ""
-                print(str)
                 
-                //DispatchQueue.main.async {
+                DispatchQueue.main.async {
                     self.Name = self.extractionName(text: str)
                     self.Price = self.extractionPrice(text: str)
                     self.ImageURL = self.extractionImageURL(text: str)
-                //}
+                }
                 
             }
             //통신 실패
@@ -59,7 +58,14 @@ import UIKit
     func extractionName(text:String) -> String {
         if let data = text.data(using: .utf8){
             let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-            return json["title"] as! String
+            let items = json["items"] as! NSArray
+            let itemsData = try!JSONSerialization.data(withJSONObject: items, options:[])
+            let itemsJson = try!JSONSerialization.jsonObject(with: itemsData, options: []) as! NSArray
+            let itemsZero = itemsJson[0] as! NSDictionary
+            var title = (itemsZero["title"] as! String).replacingOccurrences(of: "<b>", with: "")
+            title = title.replacingOccurrences(of: "</b>", with: "")
+            
+            return title
         }
         else{
             return "fail"
