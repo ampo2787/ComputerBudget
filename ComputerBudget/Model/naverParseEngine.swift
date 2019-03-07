@@ -40,9 +40,18 @@ import UIKit
                 let str = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) ?? ""
                 
                 DispatchQueue.main.async {
-                    self.Name = self.extractionName(text: str)
-                    self.Price = self.extractionPrice(text: str)
-                    self.ImageURL = self.extractionImageURL(text: str)
+                    
+                    if let data = str.data(using: .utf8){
+                        let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                        let items = json["items"] as! NSArray
+                        let itemsData = try!JSONSerialization.data(withJSONObject: items, options:[])
+                        let itemsJson = try!JSONSerialization.jsonObject(with: itemsData, options: []) as! NSArray
+                        let itemsZero = itemsJson[0] as! NSDictionary
+                        
+                        self.Name = self.extractionName(text: itemsZero["title"] as! String)
+                        self.Price = itemsZero["lprice"] as? String
+                        self.ImageURL = itemsZero["image"] as? String
+                    }
                 }
                 
             }
@@ -56,40 +65,10 @@ import UIKit
     }
     
     func extractionName(text:String) -> String {
-        if let data = text.data(using: .utf8){
-            let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-            let items = json["items"] as! NSArray
-            let itemsData = try!JSONSerialization.data(withJSONObject: items, options:[])
-            let itemsJson = try!JSONSerialization.jsonObject(with: itemsData, options: []) as! NSArray
-            let itemsZero = itemsJson[0] as! NSDictionary
-            var title = (itemsZero["title"] as! String).replacingOccurrences(of: "<b>", with: "")
-            title = title.replacingOccurrences(of: "</b>", with: "")
-            
-            return title
-        }
-        else{
-            return "fail"
-        }
+        var title = text.replacingOccurrences(of: "<b>", with: "")
+        title = title.replacingOccurrences(of: "</b>", with: "")
+        return title
     }
-    
-    func extractionImageURL(text:String) -> String {
-        if let data = text.data(using: .utf8){
-            let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-            return json["image"] as! String
-        }
-        else{
-            return "fail"
-        }
-    }
-    
-    func extractionPrice(text:String) -> String {
-        if let data = text.data(using: .utf8){
-            let json = try!JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-            return json["lprice"] as! String
-        }
-        else{
-            return "fail"
-        }
-    }
+
     
 }
