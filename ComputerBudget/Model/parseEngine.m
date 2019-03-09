@@ -101,7 +101,7 @@
         //처리해야할 것 : 상품명, 가격, imageURL
         
         [NEngine callURLWithSearch:@"i5 - 8500"];
-//        [self listMakeForNaver:NEngine withType:CPU];
+        [self listMakeForNaver:NEngine withType:CPU];
 //        [NEngine callURLWithSearch:@"gtx - 1050 Ti 4gb"];
 //        [self listMakeForNaver:NEngine withType:GPU];
 //        [NEngine callURLWithSearch:@"samsung ddr4 8gb - 21300"];
