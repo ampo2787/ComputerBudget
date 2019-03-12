@@ -15,7 +15,7 @@ import UIKit
     var Price : String?
     var ImageURL : String?
     
-    func callURL(search : String){
+    func callURL(search : String, product : NSMutableDictionary, image : NSMutableDictionary, price : NSMutableDictionary, key : String){
         let ClientID = "MfBgutVQe5VQcXPIvvjH"
         let ClientSecret = "ppbyHNxhzR"
         
@@ -48,9 +48,13 @@ import UIKit
                         let itemsJson = try!JSONSerialization.jsonObject(with: itemsData, options: []) as! NSArray
                         let itemsZero = itemsJson[0] as! NSDictionary
                         
-                        self.Name = self.extractionName(text: itemsZero["title"] as! String)
-                        self.Price = itemsZero["lprice"] as? String
-                        self.ImageURL = itemsZero["image"] as? String
+                        product.setObject(self.extractionName(text: itemsZero["title"] as! String), forKey: key as NSCopying)
+                        price.setObject(itemsZero["lprice"] as! String, forKey: key as NSCopying)
+                        image.setObject(itemsZero["image"] as! String, forKey: key as NSCopying)
+                        
+//                        self.Name = self.extractionName(text: itemsZero["title"] as! String)
+//                        self.Price = itemsZero["lprice"] as? String
+//                        self.ImageURL = itemsZero["image"] as? String
                     }
                 }
                 
