@@ -68,7 +68,7 @@ import UIKit
     
     func extractionName(text:String) -> String {
         var title = text.replacingOccurrences(of: "<b>", with: "")
-        title = title.replacingOccurrences(of: "</b>", with: "")
+        title = title.replacingOccurrences(of: "</b>", with: "") //쓰레기 값 제거.
         return title
     }
     
