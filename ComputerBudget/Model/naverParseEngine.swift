@@ -10,7 +10,6 @@ import UIKit
 
 @objcMembers class naverParseEngine: NSObject {
     
-    var Json_Text : String?
     var productList : Dictionary<String, String> = Dictionary.init()
     var priceList : Dictionary<String, String> = Dictionary.init()
     var imageURLList : Dictionary<String, String> = Dictionary.init()

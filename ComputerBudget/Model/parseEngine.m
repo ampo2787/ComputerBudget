@@ -29,6 +29,8 @@
 @property (nonatomic) TFHppleElement *data;
 //파싱하는데 필요한 변수.
 
+@property naverParseEngine *NEngine;
+
 @property Boolean NAVER_ON;
 
 @end
@@ -97,17 +99,14 @@
         //mainboard는 cpu에서 이어서 파싱.
     }
     else{
-        naverParseEngine *NEngine = [[naverParseEngine alloc]init];
         //처리해야할 것 : 상품명, 가격, imageURL
-        
-        [NEngine callURLWithSearch:@"i5 - 8500" key:CPU];
-        [NEngine callURLWithSearch:@"gtx - 1050 Ti 4gb" key:GPU];
-        [NEngine callURLWithSearch:@"samsung ddr4 8gb - 21300" key:RAM];
-        [NEngine callURLWithSearch:@"ADATA Ultimate SU800 M.2 2280 STCOM (256GB)"  key:DISK];
-        [NEngine callURLWithSearch:@"마이크로닉스 Classic II 500W +12V Single Rail 85+" key:POWER];
-        [NEngine callURLWithSearch:@"GIGABYTE GA-H110M-DS2V 듀러블에디션 피씨디렉트" key:MAIN];
-        
-        
+        self.NEngine = [[naverParseEngine alloc]init];
+        [self.NEngine callURLWithSearch:@"i5 - 8500" key:CPU];
+        [self.NEngine callURLWithSearch:@"gtx - 1050 Ti 4gb" key:GPU];
+        [self.NEngine callURLWithSearch:@"samsung ddr4 8gb - 21300" key:RAM];
+        [self.NEngine callURLWithSearch:@"ADATA Ultimate SU800 M.2 2280 STCOM (256GB)"  key:DISK];
+        [self.NEngine callURLWithSearch:@"마이크로닉스 Classic II 500W +12V Single Rail 85+" key:POWER];
+        [self.NEngine callURLWithSearch:@"GIGABYTE GA-H110M-DS2V 듀러블에디션 피씨디렉트" key:MAIN];
     }
     
     return true;
