@@ -75,7 +75,7 @@
 
 #pragma mark - private method
 - (BOOL)parse{
-    self.NAVER_ON = YES;
+    self.NAVER_ON = NO;
     
     if(!self.NAVER_ON){
         [self parseCPU:[[self.priceList objectForKey:CPU] intValue]];
