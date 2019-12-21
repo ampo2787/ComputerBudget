@@ -69,6 +69,7 @@
     [self.tfPurpose setInputAccessoryView:toolbar];
     [self.tfPurpose setInputView:purposePickerView];
     //목적 PickerView 추가.
+    
     self.tfPurpose.text = @"간단한 사무용, 동영상 감상";
     self.tfPurposeText = self.tfPurpose.text;
     
@@ -124,23 +125,29 @@
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     if(pickerView == budgetPickerView){
-        self.tfBudgetText = [budgetArray objectAtIndex:row];
         return [budgetArray objectAtIndex:row];
     }else{
-        self.tfPurposeText = [purposeArray objectAtIndex:row];
         return [purposeArray objectAtIndex:row];
     }
     
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if(pickerView == budgetPickerView){
+        self.tfBudgetText = [budgetArray objectAtIndex:row];
+        [self.tfBudget setText:self.tfBudgetText];
+    }else{
+        self.tfPurposeText = [purposeArray objectAtIndex:row];
+        [self.tfPurpose setText:self.tfPurposeText];
+    }
+}
+
 #pragma mark - Action
 
 -(void)pickerViewDone:(UIBarButtonItem *)sender{
-    [self.tfBudget setText:self.tfBudgetText];
     [self.tfBudget resignFirstResponder];
     [budgetPickerView removeFromSuperview];
     
-    [self.tfPurpose setText:self.tfPurposeText];
     [self.tfPurpose resignFirstResponder];
     [purposePickerView removeFromSuperview];
 }

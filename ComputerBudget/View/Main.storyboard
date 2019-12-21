@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="na1-ku-PLg">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="na1-ku-PLg">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,8 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="peG-qA-2do">
-                                <rect key="frame" x="144" y="583" width="212" height="30"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="144" y="587" width="212" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -37,20 +34,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vpN-2j-FKL">
-                                <rect key="frame" x="65.666666666666657" y="544" width="292.33333333333337" height="30"/>
+                                <rect key="frame" x="65.666666666666657" y="544" width="292.33333333333337" height="34"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF9-cC-q6F">
-                                <rect key="frame" x="0.0" y="641" width="375" height="171"/>
+                                <rect key="frame" x="10" y="713" width="355" height="60"/>
                                 <color key="backgroundColor" red="0.95523184537887573" green="0.70319876466591447" blue="0.049629251645249131" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="afR-nP-fzf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="선택 완료!"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="pushTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BbD-cJ-jPj"/>
                                 </connections>
@@ -58,16 +62,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NF9-cC-q6F" secondAttribute="trailing" id="0Ld-pz-Cl0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NF9-cC-q6F" secondAttribute="bottom" constant="-34" id="1nY-7l-XTz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NF9-cC-q6F" secondAttribute="trailing" constant="10" id="0Ld-pz-Cl0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NF9-cC-q6F" secondAttribute="bottom" constant="5" id="1nY-7l-XTz"/>
                             <constraint firstItem="vpN-2j-FKL" firstAttribute="leading" secondItem="qjQ-Er-Ng6" secondAttribute="trailing" constant="12" id="4Qe-Ot-QTJ"/>
                             <constraint firstItem="qjQ-Er-Ng6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="501" id="6eW-KW-MpK"/>
                             <constraint firstItem="8x7-IQ-576" firstAttribute="height" secondItem="qjQ-Er-Ng6" secondAttribute="height" id="AiE-gR-9eC"/>
                             <constraint firstItem="peG-qA-2do" firstAttribute="top" secondItem="vpN-2j-FKL" secondAttribute="bottom" constant="9" id="Bbk-2T-nHh"/>
-                            <constraint firstItem="NF9-cC-q6F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HRf-Mg-OTH"/>
+                            <constraint firstItem="NF9-cC-q6F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="HRf-Mg-OTH"/>
                             <constraint firstItem="8x7-IQ-576" firstAttribute="top" secondItem="qjQ-Er-Ng6" secondAttribute="bottom" constant="22" id="Jyv-6N-ZOt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vpN-2j-FKL" secondAttribute="trailing" constant="17" id="KqF-08-co6"/>
-                            <constraint firstItem="NF9-cC-q6F" firstAttribute="top" secondItem="peG-qA-2do" secondAttribute="bottom" constant="28" id="PwI-F9-Czl"/>
+                            <constraint firstItem="NF9-cC-q6F" firstAttribute="top" relation="greaterThanOrEqual" secondItem="peG-qA-2do" secondAttribute="bottom" constant="5" id="PwI-F9-Czl"/>
                             <constraint firstItem="peG-qA-2do" firstAttribute="leading" secondItem="8x7-IQ-576" secondAttribute="trailing" constant="10" id="QjT-CM-qGJ"/>
                             <constraint firstItem="8x7-IQ-576" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="SUe-ug-YGL"/>
                             <constraint firstItem="qjQ-Er-Ng6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="WE0-No-P0N"/>
@@ -101,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="137"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="tableViewCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ymd-jl-Wfi" id="12y-u6-sb3" customClass="TableViewCell">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="136.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" fixedFrame="YES" text="항목" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="116" translatesAutoresizingMaskIntoConstraints="NO" id="DFR-98-ImS">
